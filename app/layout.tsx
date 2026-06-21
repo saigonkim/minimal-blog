@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     title: blogConfig.title,
     description: blogConfig.description,
     images: [blogConfig.seo.defaultOgImage],
+  },
+  verification: {
+    google: blogConfig.verification.google,
   }
 };
 

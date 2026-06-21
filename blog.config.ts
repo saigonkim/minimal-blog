@@ -18,6 +18,11 @@ export const blogConfig = {
     type: 'website',
     defaultOgImage: '/og-image.png', // public 폴더 기준 위치
   },
+
+  // 검색 엔진 등록용 소유권 확인 토큰 (Google Search Console 등)
+  verification: {
+    google: 'E0NIEY5zxErpSAzgHUJcE1u9r90LNxtm7GoduBWhMZA',
+  },
   
   // 광고 슬롯 활성화 여부
   ads: {
