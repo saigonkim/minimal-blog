@@ -17,14 +17,14 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
 
   return (
     <div 
-      className="prose prose-neutral dark:prose-invert max-w-none 
+      className="prose prose-neutral prose-invert max-w-none 
         prose-headings:font-bold 
         prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
-        prose-p:leading-relaxed prose-p:text-neutral-700 dark:prose-p:text-neutral-300
-        prose-a:text-violet-600 dark:prose-a:text-violet-400 prose-a:no-underline hover:prose-a:underline
+        prose-p:leading-relaxed prose-p:text-neutral-300
+        prose-a:text-violet-400 prose-a:no-underline hover:prose-a:underline
         prose-img:rounded-2xl prose-img:shadow-md
-        prose-pre:bg-neutral-950 dark:prose-pre:bg-neutral-900 prose-pre:border prose-pre:border-neutral-800 prose-pre:rounded-xl
-        prose-code:text-violet-600 dark:prose-code:text-violet-400 prose-code:bg-neutral-100 dark:prose-code:bg-neutral-800/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+        prose-pre:bg-neutral-900 prose-pre:border prose-pre:border-neutral-800 prose-pre:rounded-xl
+        prose-code:text-violet-400 prose-code:bg-neutral-800/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
         prose-blockquote:border-l-4 prose-blockquote:border-violet-500 prose-blockquote:bg-violet-500/5 prose-blockquote:px-4 prose-blockquote:py-1 prose-blockquote:rounded-r-lg"
       dangerouslySetInnerHTML={{ __html: rawHtml }}
     />

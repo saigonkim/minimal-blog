@@ -37,7 +37,7 @@ export default function Home() {
           {posts.map((post, index) => (
             <div key={post.slug}>
               <article 
-                className="group relative flex flex-col items-start p-6 rounded-2xl border border-neutral-800/60 bg-[#18181b]/40 hover:bg-[#18181b]/70 hover:shadow-sm hover:shadow-neutral-900/30 transition-all duration-300"
+                className="group relative flex flex-col items-start p-6 rounded-2xl border border-neutral-800 bg-[#18181b]/60 hover:bg-[#18181b]/90 hover:shadow-sm hover:shadow-neutral-900/30 transition-all duration-300"
               >
                 <div className="flex items-center gap-3 text-xs text-neutral-500">
                   <Calendar className="w-3.5 h-3.5" />
