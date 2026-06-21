@@ -65,7 +65,7 @@ export default async function PostPage({ params }: PostPageProps) {
           <time dateTime={post.date}>{post.date}</time>
         </div>
         
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-50">
+        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-200">
           {post.title}
         </h1>
 

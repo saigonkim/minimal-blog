@@ -18,7 +18,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
   return (
     <div 
       className="prose prose-neutral prose-invert max-w-none 
-        prose-headings:font-bold 
+        prose-headings:font-bold prose-headings:text-neutral-200
         prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
         prose-p:leading-relaxed prose-p:text-neutral-400
         prose-a:text-violet-400 prose-a:no-underline hover:prose-a:underline
