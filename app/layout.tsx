@@ -30,19 +30,19 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#fafafa] dark:bg-[#09090b] text-[#171717] dark:text-[#f4f4f5]">
+      <body className="min-h-full flex flex-col bg-[#09090b] text-[#f4f4f5]">
         <ThemeProvider
           attribute="class"
           forcedTheme="dark"
           disableTransitionOnChange
         >
           {/* Header */}
-          <header className="sticky top-0 z-40 w-full border-b border-neutral-200/80 dark:border-neutral-800/80 bg-white/80 dark:bg-[#09090b]/80 backdrop-blur-md transition-all duration-300">
+          <header className="sticky top-0 z-40 w-full border-b border-neutral-850 bg-[#09090b]/80 backdrop-blur-md transition-all duration-300">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
               <div className="flex h-16 items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
-                  <span className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-violet-600 to-indigo-600 dark:from-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
+                  <span className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">
                     MinimaLog
                   </span>
                 </Link>
@@ -51,7 +51,7 @@ export default function RootLayout({
                 <nav className="flex items-center gap-4">
                   <Link
                     href="/admin"
-                    className="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+                    className="text-sm font-medium text-neutral-400 hover:text-neutral-100 transition-colors"
                   >
                     관리자
                   </Link>
@@ -66,13 +66,13 @@ export default function RootLayout({
           </main>
 
           {/* Footer */}
-          <footer className="w-full border-t border-neutral-200 dark:border-neutral-800/60 bg-white dark:bg-[#09090b] py-6 transition-all duration-300">
+          <footer className="w-full border-t border-neutral-900 bg-[#09090b] py-6 transition-all duration-300">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-              <p className="text-xs text-neutral-500 dark:text-neutral-400">
+              <p className="text-xs text-neutral-400">
                 &copy; {new Date().getFullYear()} MinimaLog. All rights reserved.
               </p>
-              <p className="text-xs text-neutral-400 dark:text-neutral-500">
-                Built with <span className="text-violet-500 dark:text-violet-400">Next.js</span> &amp; <span className="text-violet-500 dark:text-violet-400">Tailwind CSS</span>
+              <p className="text-xs text-neutral-500">
+                Built with <span className="text-violet-400">Next.js</span> &amp; <span className="text-violet-400">Tailwind CSS</span>
               </p>
             </div>
           </footer>

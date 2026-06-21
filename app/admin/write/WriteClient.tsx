@@ -101,11 +101,11 @@ export default function WriteClient({ post, adminPassword }: WriteClientProps) {
   return (
     <div className="space-y-6">
       {/* Top action header */}
-      <div className="flex items-center justify-between pb-4 border-b border-neutral-200 dark:border-neutral-800">
+      <div className="flex items-center justify-between pb-4 border-b border-neutral-800">
         <div className="flex items-center gap-2">
           <Link 
             href="/admin" 
-            className="p-2 text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800"
+            className="p-2 text-neutral-400 hover:text-neutral-100 transition-colors rounded-lg hover:bg-neutral-800"
           >
             <ArrowLeft className="w-5 h-5" />
           </Link>
@@ -132,7 +132,7 @@ export default function WriteClient({ post, adminPassword }: WriteClientProps) {
           <div className="space-y-4">
             {/* Title */}
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                 제목 *
               </label>
               <input
@@ -140,7 +140,7 @@ export default function WriteClient({ post, adminPassword }: WriteClientProps) {
                 value={title}
                 onChange={handleTitleChange}
                 placeholder="포스트 제목을 입력하세요"
-                className="w-full px-4 py-2.5 rounded-lg border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#18181b]/50 text-neutral-900 dark:text-neutral-50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all text-sm font-semibold"
+                className="w-full px-4 py-2.5 rounded-lg border border-neutral-800 bg-[#18181b]/50 text-neutral-50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all text-sm font-semibold"
                 required
               />
             </div>
@@ -149,7 +149,7 @@ export default function WriteClient({ post, adminPassword }: WriteClientProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Slug */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
+                <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                   슬러그 (영문/숫자/하이픈) *
                 </label>
                 <input
@@ -158,14 +158,14 @@ export default function WriteClient({ post, adminPassword }: WriteClientProps) {
                   onChange={(e) => setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9-_]/g, '-'))}
                   placeholder="hello-world"
                   disabled={isEditMode}
-                  className="w-full px-4 py-2.5 rounded-lg border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#18181b]/50 text-neutral-900 dark:text-neutral-50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all text-sm disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-2.5 rounded-lg border border-neutral-800 bg-[#18181b]/50 text-neutral-50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all text-sm disabled:opacity-60 disabled:cursor-not-allowed"
                   required
                 />
               </div>
 
               {/* Date */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
+                <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                   작성일 (YYYY-MM-DD) *
                 </label>
                 <input
@@ -173,7 +173,7 @@ export default function WriteClient({ post, adminPassword }: WriteClientProps) {
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
                   placeholder="2026-06-21"
-                  className="w-full px-4 py-2.5 rounded-lg border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#18181b]/50 text-neutral-900 dark:text-neutral-50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all text-sm"
+                  className="w-full px-4 py-2.5 rounded-lg border border-neutral-800 bg-[#18181b]/50 text-neutral-50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all text-sm"
                   required
                 />
               </div>
@@ -181,7 +181,7 @@ export default function WriteClient({ post, adminPassword }: WriteClientProps) {
 
             {/* Description */}
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                 포스트 요약 설명
               </label>
               <textarea
@@ -189,13 +189,13 @@ export default function WriteClient({ post, adminPassword }: WriteClientProps) {
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="리스트에 노출될 포스트의 짧은 요약글을 적어주세요"
                 rows={2}
-                className="w-full px-4 py-2.5 rounded-lg border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#18181b]/50 text-neutral-900 dark:text-neutral-50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all text-sm resize-none"
+                className="w-full px-4 py-2.5 rounded-lg border border-neutral-800 bg-[#18181b]/50 text-neutral-50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all text-sm resize-none"
               />
             </div>
 
             {/* Tags */}
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                 태그 (쉼표로 구분)
               </label>
               <input
@@ -203,17 +203,17 @@ export default function WriteClient({ post, adminPassword }: WriteClientProps) {
                 value={tagsInput}
                 onChange={(e) => setTagsInput(e.target.value)}
                 placeholder="Nextjs, Minimal, VibeCoding"
-                className="w-full px-4 py-2.5 rounded-lg border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#18181b]/50 text-neutral-900 dark:text-neutral-50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all text-sm"
+                className="w-full px-4 py-2.5 rounded-lg border border-neutral-800 bg-[#18181b]/50 text-neutral-50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all text-sm"
               />
             </div>
 
             {/* Markdown Editor Textarea */}
             <div className="flex-1 flex flex-col min-h-[300px]">
               <div className="flex items-center justify-between mb-2">
-                <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400">
                   마크다운 본문 *
                 </label>
-                <div className="flex lg:hidden items-center border border-neutral-200 dark:border-neutral-800 rounded-lg overflow-hidden text-xs">
+                <div className="flex lg:hidden items-center border border-neutral-800 rounded-lg overflow-hidden text-xs">
                   <button
                     type="button"
                     onClick={() => setActiveTab('write')}
@@ -236,7 +236,7 @@ export default function WriteClient({ post, adminPassword }: WriteClientProps) {
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 placeholder="마크다운 양식으로 본문을 작성하세요... (이미지는 ![](/images/photo.jpg) 형태로 연결 가능)"
-                className={`w-full flex-1 p-4 rounded-lg border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-[#18181b]/50 text-neutral-900 dark:text-neutral-50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all text-sm font-mono leading-relaxed min-h-[300px] ${activeTab === 'preview' ? 'hidden lg:block' : ''}`}
+                className={`w-full flex-1 p-4 rounded-lg border border-neutral-800 bg-[#18181b]/50 text-neutral-50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all text-sm font-mono leading-relaxed min-h-[300px] ${activeTab === 'preview' ? 'hidden lg:block' : ''}`}
                 required
               />
             </div>
@@ -244,8 +244,8 @@ export default function WriteClient({ post, adminPassword }: WriteClientProps) {
         </form>
 
         {/* Live Preview Panel */}
-        <div className={`flex flex-col border border-neutral-200 dark:border-neutral-800/80 bg-white dark:bg-[#18181b]/20 rounded-2xl p-6 min-h-[400px] lg:min-h-full ${activeTab === 'write' ? 'hidden lg:flex' : 'flex'}`}>
-          <div className="flex items-center gap-2 pb-4 mb-4 border-b border-neutral-100 dark:border-neutral-850/80 text-sm font-semibold text-neutral-400">
+        <div className={`flex flex-col border border-neutral-800 bg-[#18181b]/20 rounded-2xl p-6 min-h-[400px] lg:min-h-full ${activeTab === 'write' ? 'hidden lg:flex' : 'flex'}`}>
+          <div className="flex items-center gap-2 pb-4 mb-4 border-b border-neutral-850 text-sm font-semibold text-neutral-500">
             <Sparkles className="w-4 h-4 text-violet-500" />
             실시간 프리뷰 (Live Preview)
           </div>
@@ -253,7 +253,7 @@ export default function WriteClient({ post, adminPassword }: WriteClientProps) {
             {content.trim() ? (
               <MarkdownRenderer content={content} />
             ) : (
-              <p className="text-sm text-neutral-400 dark:text-neutral-600 italic">본문 내용을 입력하면 여기에 실시간으로 변환 렌더링됩니다.</p>
+              <p className="text-sm text-neutral-500 italic">본문 내용을 입력하면 여기에 실시간으로 변환 렌더링됩니다.</p>
             )}
           </div>
         </div>

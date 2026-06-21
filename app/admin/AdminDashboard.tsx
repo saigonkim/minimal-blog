@@ -52,10 +52,10 @@ export default function AdminDashboard({ posts: initialPosts, adminPassword }: A
   return (
     <div className="space-y-6">
       {/* 상단 액션바 */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-neutral-200 dark:border-neutral-800">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-neutral-800">
         <div>
           <h1 className="text-3xl font-extrabold tracking-tight">글 관리 대시보드</h1>
-          <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+          <p className="text-sm text-neutral-400 mt-1">
             작성된 로컬 마크다운 포스트를 수정하거나 삭제합니다.
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function AdminDashboard({ posts: initialPosts, adminPassword }: A
           </Link>
           <button
             onClick={handleLogout}
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-850 dark:hover:bg-neutral-850 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-semibold transition-colors border border-neutral-255/80 dark:border-neutral-750"
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-neutral-900 hover:bg-neutral-800 text-neutral-300 rounded-lg text-sm font-semibold transition-colors border border-neutral-800"
           >
             <LogOut className="w-4 h-4" />
             로그아웃
@@ -80,26 +80,26 @@ export default function AdminDashboard({ posts: initialPosts, adminPassword }: A
 
       {/* 포스트 관리 리스트 */}
       {posts.length === 0 ? (
-        <div className="text-center py-16 border border-dashed border-neutral-200 dark:border-neutral-800 rounded-2xl">
-          <p className="text-neutral-500 dark:text-neutral-400">아직 작성된 글이 없습니다. 새로운 글을 작성해 보세요!</p>
+        <div className="text-center py-16 border border-dashed border-neutral-800 rounded-2xl">
+          <p className="text-neutral-400">아직 작성된 글이 없습니다. 새로운 글을 작성해 보세요!</p>
         </div>
       ) : (
-        <div className="bg-white dark:bg-[#18181b]/20 border border-neutral-200 dark:border-neutral-800/80 rounded-2xl overflow-hidden">
-          <ul className="divide-y divide-neutral-200 dark:divide-neutral-800/80">
+        <div className="bg-[#18181b]/20 border border-neutral-800/80 rounded-2xl overflow-hidden">
+          <ul className="divide-y divide-neutral-800/80">
             {posts.map((post) => (
               <li 
                 key={post.slug}
-                className="flex items-center justify-between p-5 hover:bg-neutral-50/50 dark:hover:bg-neutral-900/10 transition-colors"
+                className="flex items-center justify-between p-5 hover:bg-neutral-900/20 transition-colors"
               >
                 <div className="flex items-start gap-4 max-w-[70%]">
-                  <div className="p-2 rounded-xl bg-violet-500/10 text-violet-600 dark:text-violet-400 mt-1 shrink-0">
+                  <div className="p-2 rounded-xl bg-violet-500/10 text-violet-400 mt-1 shrink-0">
                     <FileText className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-neutral-900 dark:text-neutral-100 text-base leading-snug">
+                    <h3 className="font-bold text-neutral-100 text-base leading-snug">
                       {post.title}
                     </h3>
-                    <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-400 dark:text-neutral-500 mt-1.5">
+                    <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-500 mt-1.5">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5" />
                         {post.date}
@@ -114,14 +114,14 @@ export default function AdminDashboard({ posts: initialPosts, adminPassword }: A
                   <Link
                     href={`/posts/${post.slug}`}
                     target="_blank"
-                    className="p-2 text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg"
+                    className="p-2 text-neutral-500 hover:text-neutral-200 transition-colors hover:bg-neutral-800/80 rounded-lg"
                     title="글 보기"
                   >
                     <ExternalLink className="w-4 h-4" />
                   </Link>
                   <Link
                     href={`/admin/write?slug=${post.slug}`}
-                    className="p-2 text-neutral-600 dark:text-neutral-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg"
+                    className="p-2 text-neutral-400 hover:text-violet-400 transition-colors hover:bg-neutral-800/80 rounded-lg"
                     title="수정하기"
                   >
                     <Edit className="w-4 h-4" />
@@ -129,7 +129,7 @@ export default function AdminDashboard({ posts: initialPosts, adminPassword }: A
                   <button
                     onClick={() => handleDelete(post.slug)}
                     disabled={deletingSlug === post.slug}
-                    className="p-2 text-neutral-400 hover:text-rose-600 dark:hover:text-rose-450 transition-colors hover:bg-rose-50 dark:hover:bg-rose-950/20 rounded-lg disabled:opacity-55"
+                    className="p-2 text-neutral-500 hover:text-rose-400 transition-colors hover:bg-rose-950/20 rounded-lg disabled:opacity-55"
                     title="삭제하기"
                   >
                     <Trash2 className="w-4 h-4" />

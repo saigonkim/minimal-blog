@@ -51,7 +51,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <div className="flex items-center">
         <Link 
           href="/" 
-          className="inline-flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-neutral-100 transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-neutral-100 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           글 목록으로 돌아가기
@@ -59,18 +59,18 @@ export default async function PostPage({ params }: PostPageProps) {
       </div>
 
       {/* Header 영역 */}
-      <header className="py-6 border-b border-neutral-200 dark:border-neutral-800/80">
-        <div className="flex items-center gap-3 text-sm text-neutral-400 dark:text-neutral-500 mb-3">
+      <header className="py-6 border-b border-neutral-800">
+        <div className="flex items-center gap-3 text-sm text-neutral-500 mb-3">
           <Calendar className="w-4 h-4" />
           <time dateTime={post.date}>{post.date}</time>
         </div>
         
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50">
+        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-50">
           {post.title}
         </h1>
 
         {post.description && (
-          <p className="mt-4 text-base text-neutral-500 dark:text-neutral-400 leading-relaxed border-l-2 border-neutral-300 dark:border-neutral-700 pl-4 italic">
+          <p className="mt-4 text-base text-neutral-400 leading-relaxed border-l-2 border-neutral-700 pl-4 italic">
             {post.description}
           </p>
         )}
@@ -80,9 +80,9 @@ export default async function PostPage({ params }: PostPageProps) {
             {post.tags.map((tag) => (
               <span 
                 key={tag}
-                className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700/50"
+                className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-neutral-800 text-neutral-300 border border-neutral-700/50"
               >
-                <Tag className="w-3.5 h-3.5 text-neutral-400 dark:text-neutral-500" />
+                <Tag className="w-3.5 h-3.5 text-neutral-500" />
                 {tag}
               </span>
             ))}

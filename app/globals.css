@@ -2,20 +2,10 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --background: #fafafa;
-  --foreground: #171717;
-  --card-background: #ffffff;
-  --card-border: #e5e5e5;
-  --primary: #7c3aed; /* Violet 600 */
-  --primary-hover: #6d28d9; /* Violet 700 */
-  --muted: #737373;
-}
-
-.dark {
   --background: #09090b;
   --foreground: #f4f4f5;
   --card-background: #18181b;
-  --card-border: #27272a;
+  --card-border: #222225;
   --primary: #a78bfa; /* Violet 400 */
   --primary-hover: #c084fc; /* Violet 300 */
   --muted: #a1a1aa;
