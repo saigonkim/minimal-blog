@@ -7,7 +7,7 @@ export const blogConfig = {
   // 작성자 정보
   author: {
     name: 'saigonkim',
-    email: 'contact@saigonkim.com', // 임의의 메일 주소
+    email: 'studioplab@gmail.com', // 임의의 메일 주소
     intro: '외주 유지보수 스트레스가 없는 초경량 마크다운 블로그 미니멀로그입니다.',
     github: 'https://github.com/saigonkim',
   },
