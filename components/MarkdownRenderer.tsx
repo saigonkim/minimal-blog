@@ -20,7 +20,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
       className="prose prose-neutral prose-invert max-w-none 
         prose-headings:font-bold 
         prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
-        prose-p:leading-relaxed prose-p:text-neutral-300
+        prose-p:leading-relaxed prose-p:text-neutral-400
         prose-a:text-violet-400 prose-a:no-underline hover:prose-a:underline
         prose-img:rounded-2xl prose-img:shadow-md
         prose-pre:bg-neutral-900 prose-pre:border prose-pre:border-neutral-800 prose-pre:rounded-xl

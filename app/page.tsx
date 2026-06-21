@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
           Minimalist Thoughts
         </h1>
-        <p className="mt-4 text-base text-neutral-400 max-w-2xl leading-relaxed">
+        <p className="mt-4 text-base text-neutral-500 max-w-2xl leading-relaxed">
           외주 유지보수 스트레스가 없는 초경량 마크다운 블로그 <strong>MinimaLog</strong>입니다. 
           DB 없이 마크다운 파일로 자유롭고 빠르게 글을 기록합니다.
         </p>
@@ -24,7 +24,7 @@ export default function Home() {
       {/* 포스트가 없는 경우 */}
       {posts.length === 0 ? (
         <div className="text-center py-20 border border-dashed border-neutral-800 rounded-2xl">
-          <p className="text-neutral-400">등록된 포스트가 없습니다.</p>
+          <p className="text-neutral-500">등록된 포스트가 없습니다.</p>
           <Link 
             href="/admin/write" 
             className="mt-4 inline-flex items-center text-sm font-semibold text-violet-400 hover:underline"
@@ -44,14 +44,14 @@ export default function Home() {
                   <time dateTime={post.date}>{post.date}</time>
                 </div>
                 
-                <h2 className="mt-3 text-xl font-bold tracking-tight text-neutral-100 group-hover:text-violet-400 transition-colors">
+                <h2 className="mt-3 text-xl font-bold tracking-tight text-neutral-200 group-hover:text-violet-400 transition-colors">
                   <Link href={`/posts/${post.slug}`}>
                     <span className="absolute inset-0 rounded-2xl" />
                     {post.title}
                   </Link>
                 </h2>
                 
-                <p className="mt-2 text-sm leading-relaxed text-neutral-400 line-clamp-2">
+                <p className="mt-2 text-sm leading-relaxed text-neutral-500 line-clamp-2">
                   {post.description || '이 포스트의 요약 설명이 없습니다.'}
                 </p>
                 
