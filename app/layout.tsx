@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import { blogConfig } from "@/blog.config";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const geistSans = Geist({
@@ -15,8 +16,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "미니멀로그 (MinimaLog) - 초경량 마크다운 블로그",
-  description: "DB와 유지보수 스트레스가 없는 초경량 마크다운 기반 블로그",
+  metadataBase: new URL(blogConfig.siteUrl),
+  title: {
+    default: blogConfig.title,
+    template: `%s | ${blogConfig.title}`,
+  },
+  description: blogConfig.description,
+  openGraph: {
+    title: blogConfig.title,
+    description: blogConfig.description,
+    url: blogConfig.siteUrl,
+    siteName: blogConfig.title,
+    locale: blogConfig.seo.locale,
+    type: 'website',
+    images: [
+      {
+        url: blogConfig.seo.defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: blogConfig.title,
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: blogConfig.title,
+    description: blogConfig.description,
+    images: [blogConfig.seo.defaultOgImage],
+  }
 };
 
 export default function RootLayout({
@@ -43,7 +70,7 @@ export default function RootLayout({
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
                   <span className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">
-                    MinimaLog
+                    {blogConfig.title}
                   </span>
                 </Link>
 
@@ -69,7 +96,7 @@ export default function RootLayout({
           <footer className="w-full border-t border-neutral-900 bg-[#09090b] py-6 transition-all duration-300">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
               <p className="text-xs text-neutral-400">
-                &copy; {new Date().getFullYear()} MinimaLog. All rights reserved.
+                &copy; {new Date().getFullYear()} {blogConfig.title}. All rights reserved.
               </p>
               <p className="text-xs text-neutral-500">
                 Built with <span className="text-violet-400">Next.js</span> &amp; <span className="text-violet-400">Tailwind CSS</span>

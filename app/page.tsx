@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/posts';
-import BannerSlot from '@/components/BannerSlot';
-import { Calendar, Tag } from 'lucide-react';
+import SearchablePostList from '@/components/SearchablePostList';
+import { blogConfig } from '@/blog.config';
 
 export const dynamic = 'force-dynamic'; // 항상 서버에서 최신 마크다운 파일을 읽도록 설정
 
@@ -13,11 +13,11 @@ export default function Home() {
       {/* Blog Intro Hero */}
       <section className="py-6 border-b border-neutral-800">
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
-          Minimalist Thoughts
+          {blogConfig.title} Thoughts
         </h1>
         <p className="mt-4 text-base text-neutral-500 max-w-2xl leading-relaxed">
-          외주 유지보수 스트레스가 없는 초경량 마크다운 블로그 <strong>MinimaLog</strong>입니다. 
-          DB 없이 마크다운 파일로 자유롭고 빠르게 글을 기록합니다.
+          {blogConfig.author.intro} 
+          설정 파일 수정만으로 관리되는 초경량 0원 블로그 플랫폼입니다.
         </p>
       </section>
 
@@ -33,51 +33,7 @@ export default function Home() {
           </Link>
         </div>
       ) : (
-        <div className="grid gap-8">
-          {posts.map((post, index) => (
-            <div key={post.slug}>
-              <article 
-                className="group relative flex flex-col items-start p-6 rounded-2xl border border-neutral-800 bg-[#18181b]/60 hover:bg-[#18181b]/90 hover:shadow-sm hover:shadow-neutral-900/30 transition-all duration-300"
-              >
-                <div className="flex items-center gap-3 text-xs text-neutral-500">
-                  <Calendar className="w-3.5 h-3.5" />
-                  <time dateTime={post.date}>{post.date}</time>
-                </div>
-                
-                <h2 className="mt-3 text-xl font-bold tracking-tight text-neutral-200 group-hover:text-violet-400 transition-colors">
-                  <Link href={`/posts/${post.slug}`}>
-                    <span className="absolute inset-0 rounded-2xl" />
-                    {post.title}
-                  </Link>
-                </h2>
-                
-                <p className="mt-2 text-sm leading-relaxed text-neutral-500 line-clamp-2">
-                  {post.description || '이 포스트의 요약 설명이 없습니다.'}
-                </p>
-                
-                {post.tags && post.tags.length > 0 && (
-                  <div className="relative z-10 mt-4 flex flex-wrap gap-2">
-                    {post.tags.map((tag) => (
-                      <Link 
-                        key={tag}
-                        href={`/tags/${encodeURIComponent(tag)}`}
-                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-neutral-800 text-neutral-300 hover:bg-neutral-700 transition-colors"
-                      >
-                        <Tag className="w-3 h-3 text-neutral-500" />
-                        {tag}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </article>
-
-              {/* 목록 첫 번째 글 아래 광고 슬롯 자동 배치 (확장성 고려) */}
-              {index === 0 && (
-                <BannerSlot type="inline" id="main-list-banner" className="my-6" />
-              )}
-            </div>
-          ))}
-        </div>
+        <SearchablePostList posts={posts} />
       )}
     </div>
   );

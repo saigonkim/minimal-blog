@@ -2,9 +2,11 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getPostBySlug, getAllPosts } from '@/lib/posts';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
+import TableOfContents from '@/components/TableOfContents';
 import BannerSlot from '@/components/BannerSlot';
 import { Calendar, Tag, ArrowLeft } from 'lucide-react';
 import { Metadata } from 'next';
+import { blogConfig } from '@/blog.config';
 
 interface PostPageProps {
   params: Promise<{
@@ -19,13 +21,33 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 
   if (!post) {
     return {
-      title: '포스트를 찾을 수 없습니다 - MinimaLog',
+      title: `포스트를 찾을 수 없습니다 - ${blogConfig.title}`,
     };
   }
 
   return {
-    title: `${post.title} - MinimaLog`,
+    title: `${post.title} - ${blogConfig.title}`,
     description: post.description || `${post.title} 포스트 상세 보기`,
+    openGraph: {
+      title: `${post.title} - ${blogConfig.title}`,
+      description: post.description || `${post.title} 포스트 상세 보기`,
+      url: `${blogConfig.siteUrl}/posts/${slug}`,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [blogConfig.author.name],
+      images: [
+        {
+          url: blogConfig.seo.defaultOgImage,
+          alt: post.title,
+        }
+      ]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} - ${blogConfig.title}`,
+      description: post.description || `${post.title} 포스트 상세 보기`,
+      images: [blogConfig.seo.defaultOgImage],
+    }
   };
 }
 
@@ -91,10 +113,13 @@ export default async function PostPage({ params }: PostPageProps) {
         )}
       </header>
 
-      {/* Markdown Body */}
-      <section className="py-2">
-        <MarkdownRenderer content={post.content} />
-      </section>
+      {/* 2열 구조 레이아웃 (본문 + TOC) */}
+      <div className="flex gap-8 items-start">
+        <section className="flex-1 min-w-0 py-2">
+          <MarkdownRenderer content={post.content} />
+        </section>
+        <TableOfContents />
+      </div>
 
       {/* 하단 광고 배너 슬롯 */}
       <BannerSlot type="bottom" id="post-bottom-banner" />
