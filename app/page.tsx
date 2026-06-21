@@ -58,13 +58,14 @@ export default function Home() {
                 {post.tags && post.tags.length > 0 && (
                   <div className="relative z-10 mt-4 flex flex-wrap gap-2">
                     {post.tags.map((tag) => (
-                      <span 
+                      <Link 
                         key={tag}
-                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-neutral-800 text-neutral-300"
+                        href={`/tags/${encodeURIComponent(tag)}`}
+                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-neutral-800 text-neutral-300 hover:bg-neutral-700 transition-colors"
                       >
                         <Tag className="w-3 h-3 text-neutral-500" />
                         {tag}
-                      </span>
+                      </Link>
                     ))}
                   </div>
                 )}

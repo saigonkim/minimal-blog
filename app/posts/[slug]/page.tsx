@@ -78,13 +78,14 @@ export default async function PostPage({ params }: PostPageProps) {
         {post.tags && post.tags.length > 0 && (
           <div className="mt-6 flex flex-wrap gap-2">
             {post.tags.map((tag) => (
-              <span 
+              <Link 
                 key={tag}
-                className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-neutral-800 text-neutral-300 border border-neutral-700/50"
+                href={`/tags/${encodeURIComponent(tag)}`}
+                className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-neutral-800 text-neutral-300 border border-neutral-700/50 hover:bg-neutral-700 transition-colors"
               >
                 <Tag className="w-3.5 h-3.5 text-neutral-500" />
                 {tag}
-              </span>
+              </Link>
             ))}
           </div>
         )}
