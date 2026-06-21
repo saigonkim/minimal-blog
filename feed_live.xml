@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title><![CDATA[MinimaLog]]></title>
+    <link>https://minimal-blog-topaz.vercel.app</link>
+    <description><![CDATA[DB와 유지보수 스트레스가 없는 초경량 마크다운 기반 블로그]]></description>
+    <language>ko-KR</language>
+    <pubDate>Sun, 21 Jun 2026 09:43:40 GMT</pubDate>
+    <lastBuildDate>Sun, 21 Jun 2026 09:43:40 GMT</lastBuildDate>
+    <atom:link href="https://minimal-blog-topaz.vercel.app/feed.xml" rel="self" type="application/rss+xml" />
+    <generator>MinimaLog RSS Generator</generator>
+    <item>
+      <title><![CDATA[수포자 학생들의 마음을 여는 4가지 현실적 수학 설득 논리]]></title>
+      <link>https://minimal-blog-topaz.vercel.app/posts/4-real-math-persuasion-logics</link>
+      <guid isPermaLink="true">https://minimal-blog-topaz.vercel.app/posts/4-real-math-persuasion-logics</guid>
+      <pubDate>Sun, 21 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[개발자로서 알고리즘의 벽을 넘었던 경험을 바탕으로, 수학이 고통이 아닌 '생존 전략'이자 '운영체제(OS)'임을 전하는 방법.]]></description>
+      <category><![CDATA[교육]]></category>
+      <category><![CDATA[수학적사고]]></category>
+      <category><![CDATA[멘토링]]></category>
+      <category><![CDATA[동기부여]]></category>
+      <category><![CDATA[수학]]></category>
+    </item>
+    <item>
+      <title><![CDATA[우리는 왜 AI 시대에도 수학 문제 풀이를 해야 할까? (수학 교육의 본질)]]></title>
+      <link>https://minimal-blog-topaz.vercel.app/posts/ai-era-math-education</link>
+      <guid isPermaLink="true">https://minimal-blog-topaz.vercel.app/posts/ai-era-math-education</guid>
+      <pubDate>Sun, 21 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[제미나이와 나눈 대화를 바탕으로 정리한, AI 시대에 인간이 수학적 사고의 틀을 유지해야 하는 세 가지 이유.]]></description>
+      <category><![CDATA[수학]]></category>
+      <category><![CDATA[AI시대]]></category>
+      <category><![CDATA[에세이]]></category>
+      <category><![CDATA[생각정리]]></category>
+    </item>
+    <item>
+      <title><![CDATA[영화 <서브스턴스>를 성리학으로 읽다: 도올 김용옥이 보디 호러에 감탄한 이유]]></title>
+      <link>https://minimal-blog-topaz.vercel.app/posts/read-movie-substance-neo-confucianism</link>
+      <guid isPermaLink="true">https://minimal-blog-topaz.vercel.app/posts/read-movie-substance-neo-confucianism</guid>
+      <pubDate>Sun, 21 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[영화 <서브스턴스> 속 기괴한 자아 분열을 통해 서양의 이분법적 실체론을 비판하고, 몸과 정신의 조화를 강조하는 동양 성리학 및 기철학의 핵심 통찰을 풀어냅니다.]]></description>
+      <category><![CDATA[서브스턴스]]></category>
+      <category><![CDATA[도올김용옥]]></category>
+      <category><![CDATA[성리학]]></category>
+      <category><![CDATA[기철학]]></category>
+    </item>
+    <item>
+      <title><![CDATA[나의 첫 번째 초경량 블로그 포스트]]></title>
+      <link>https://minimal-blog-topaz.vercel.app/posts/hello-world</link>
+      <guid isPermaLink="true">https://minimal-blog-topaz.vercel.app/posts/hello-world</guid>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[DB 없이 마크다운 파일로만 구동되는 미니멀 블로그 개발기입니다.]]></description>
+      <category><![CDATA[Nextjs]]></category>
+      <category><![CDATA[VibeCoding]]></category>
+      <category><![CDATA[Minimal]]></category>
+    </item>
+  </channel>
+</rss>
