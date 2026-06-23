@@ -3,6 +3,7 @@ export const blogConfig = {
   title: 'MinimaLog',
   description: 'DB와 유지보수 스트레스가 없는 초경량 마크다운 기반 블로그',
   siteUrl: 'https://minimal-blog-topaz.vercel.app', // 사이트의 최종 도메인 주소 (sitemap 및 RSS 피드 생성에 사용)
+  googleAnalyticsId: 'G-SF3B091PYK', // Google Analytics 측정 ID
   
   // 작성자 정보
   author: {
