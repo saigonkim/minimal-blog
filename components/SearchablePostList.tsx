@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { PostMetadata } from '@/lib/posts';
 import BannerSlot from '@/components/BannerSlot';
-import { Calendar, Tag, Search, X } from 'lucide-react';
+import { Calendar, Tag, Search, X, Eye } from 'lucide-react';
 
 interface SearchablePostListProps {
   posts: PostMetadata[];
@@ -12,6 +12,26 @@ interface SearchablePostListProps {
 
 export default function SearchablePostList({ posts }: SearchablePostListProps) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [viewsData, setViewsData] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    const fetchViews = async () => {
+      try {
+        const response = await fetch('/api/views');
+        if (response.ok) {
+          const data = await response.json();
+          const parsedData: Record<string, number> = {};
+          Object.keys(data).forEach((key) => {
+            parsedData[key] = Number(data[key]) || 0;
+          });
+          setViewsData(parsedData);
+        }
+      } catch (error) {
+        console.error('Failed to fetch view counts:', error);
+      }
+    };
+    fetchViews();
+  }, []);
 
   // 검색 필터링 (제목, 요약, 태그 기준 매칭)
   const filteredPosts = posts.filter((post) => {
@@ -80,6 +100,12 @@ export default function SearchablePostList({ posts }: SearchablePostListProps) {
                 <div className="flex items-center gap-3 text-xs text-neutral-500">
                   <Calendar className="w-3.5 h-3.5" />
                   <time dateTime={post.date}>{post.date}</time>
+                </div>
+
+                {/* 조회수 표시 (우상귀 절대 배치) */}
+                <div className="absolute top-6 right-6 flex items-center gap-1.2 text-xs text-neutral-500 bg-neutral-900/40 border border-neutral-850 px-2 py-0.5 rounded-full pointer-events-none group-hover:border-neutral-700 transition-colors z-10">
+                  <Eye className="w-3.5 h-3.5 text-neutral-650" />
+                  <span>{(viewsData[post.slug] || 0).toLocaleString()}</span>
                 </div>
                 
                 <h2 className="mt-3 text-xl font-bold tracking-tight text-neutral-200 group-hover:text-violet-400 transition-colors">

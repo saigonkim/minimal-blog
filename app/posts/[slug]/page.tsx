@@ -7,6 +7,7 @@ import BannerSlot from '@/components/BannerSlot';
 import { Calendar, Tag, ArrowLeft } from 'lucide-react';
 import { Metadata } from 'next';
 import { blogConfig } from '@/blog.config';
+import ViewCounter from '@/components/ViewCounter';
 
 interface PostPageProps {
   params: Promise<{
@@ -82,9 +83,13 @@ export default async function PostPage({ params }: PostPageProps) {
 
       {/* Header 영역 */}
       <header className="py-6 border-b border-neutral-800">
-        <div className="flex items-center gap-3 text-sm text-neutral-500 mb-3">
-          <Calendar className="w-4 h-4" />
-          <time dateTime={post.date}>{post.date}</time>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-sm text-neutral-500 mb-3">
+          <div className="flex items-center gap-1.5">
+            <Calendar className="w-4 h-4" />
+            <time dateTime={post.date}>{post.date}</time>
+          </div>
+          <span className="text-neutral-700">•</span>
+          <ViewCounter slug={post.slug} />
         </div>
         
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-200">
